@@ -71,6 +71,8 @@ def on_message(client, userdata, msg):
 
     cnxn.commit()
 
+    print("Data Stored In Database...")
+
 
 
 client = mqtt.Client()

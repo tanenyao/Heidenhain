@@ -24,6 +24,7 @@ import re, json, os
 #directory = 'C:/Users/watts/Desktop/data'				# change 1
 directory = '/home/pi/ShareFile'
 
+
 for filename in os.listdir(directory):
     if filename.endswith(".TAB"):
         #with open(directory+'/'+filename, "r") as f:			# change 3
@@ -69,9 +70,10 @@ for filename in os.listdir(directory):
         string2 = headers
         string3 = json.dumps(jsonstring)
 
-        localhost = '172.20.115.20'
         #localhost = 'iot.eclipse.org'					# change 2
+        localhost = '172.20.115.20'
 
+        
         topic = 'Heidenhain/Pi'
         payload = str([string1,string2,string3])
         publish.single(topic, payload, qos=2, retain=False, hostname=localhost,
